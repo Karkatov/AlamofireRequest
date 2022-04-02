@@ -53,10 +53,10 @@ class ViewController: UIViewController {
     
     func showImage() {
         
-        let urlString =  "https://loremflickr.com/3840/2160"
+        let urlString =  "https://loremflickr.com/1200/900"
         guard let url = URL(string: urlString) else { return }
-        AF.download(url)
-        
+        AF.request(url)
+        //check
             .validate()
         
         // progress %
@@ -67,6 +67,7 @@ class ViewController: UIViewController {
         // response
             .responseData { (response) in
                 if let data = response.value {
+                    print(data)
                     let imageData = UIImage(data: data)
                     self.imageView.image = imageData
                     
