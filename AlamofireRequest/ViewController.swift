@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.frame = view.frame
+        imageView.frame = CGRect(x: view.frame.origin.x / 2 + 30, y: view.frame.origin.y / 2, width: view.frame.size.width - 60, height: view.frame.size.height)
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
         
